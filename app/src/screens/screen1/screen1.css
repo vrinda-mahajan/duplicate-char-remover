@@ -1,0 +1,11 @@
+.input-container{
+    margin-bottom: 2rem;
+}
+.input-label{
+    font-size: 1.6rem;
+}
+.input-field{
+    height: 2.4rem;
+    font-size: 1.6rem;
+    width: 50%;
+}

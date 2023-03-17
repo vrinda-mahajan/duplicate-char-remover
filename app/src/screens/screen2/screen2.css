@@ -1,0 +1,13 @@
+.card-container{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.chip {
+    border-radius: 1.6rem;
+    width: fit-content;
+    font-size: 1.6rem;
+    color: green;
+    border: 1px solid green;
+    padding: 0.2rem 1.2rem;
+  }
