@@ -3,7 +3,11 @@ import { colors } from "data/color";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export const Card = ({ charInfo, closeBtnHandler }: any) => {
+type CardProps = {
+  charInfo: { char: string; index: number };
+  closeBtnHandler: (index: number) => void;
+};
+export const Card = ({ charInfo, closeBtnHandler }: CardProps) => {
   const { char, index } = charInfo;
 
   // to get color info from colors array

@@ -7,14 +7,14 @@ import "./screen2.css";
 
 export const Screen2 = () => {
   const { state } = useLocation();
-  const [input, setInput] = useState(state);
+  const [input, setInput] = useState<string>(state);
 
-  const charArr = input.split("");
-  let updatedString = "";
+  const charArr: string[] = input.split("");
+  let updatedString: string | undefined = "";
 
   // removes the repeated instance of the selected char except the selected one.
   const closeBtnHandler = (index: number) => {
-    const char = charArr[index];
+    const char: string = charArr[index];
     updatedString = "";
     for (let i = 0; i < charArr.length; i++) {
       if (charArr[i] !== char) {
@@ -29,11 +29,11 @@ export const Screen2 = () => {
   };
 
   // checks whether all characters in the string are unique or not by passing the arr into set
-  const checkUniqueChars = (arr: any) => {
-    const uniqueSet = new Set(arr);
+  const checkUniqueChars = (arr: string[]) => {
+    const uniqueSet: Set<string> = new Set(arr);
     return uniqueSet.size === arr.length;
   };
-  const isUnique = checkUniqueChars(charArr);
+  const isUnique: boolean = checkUniqueChars(charArr);
 
   return (
     <div className="screen2-container">

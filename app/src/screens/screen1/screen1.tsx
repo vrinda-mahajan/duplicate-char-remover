@@ -8,10 +8,10 @@ import "./screen1.css";
 export const Screen1 = () => {
   const navigate = useNavigate();
 
-  const [input, setInput] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
+  const [input, setInput] = useState<string>("");
+  const [showAlert, setShowAlert] = useState<boolean>(false);
 
-  const formSubmitHandler = (e: any) => {
+  const formSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const trimmedString = input.replace(/\s/g, ""); // removes extra spaces from the input string
     trimmedString === ""
