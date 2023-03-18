@@ -12,6 +12,7 @@ export const Screen2 = () => {
   const charArr = input.split("");
   let updatedString = "";
 
+  // removes the repeated instance of the selected char except the selected one.
   const closeBtnHandler = (index: number) => {
     const char = charArr[index];
     updatedString = "";
@@ -27,6 +28,7 @@ export const Screen2 = () => {
     setInput(updatedString);
   };
 
+  // checks whether all characters in the string are unique or not by passing the arr into set
   const checkUniqueChars = (arr: any) => {
     const uniqueSet = new Set(arr);
     return uniqueSet.size === arr.length;
@@ -38,6 +40,7 @@ export const Screen2 = () => {
       <Link to={"/"} className="back-icon">
         <FontAwesomeIcon icon={faArrowLeft} />
       </Link>
+
       <div className="screen2-header">
         <div>
           <p className="text-xlg">
@@ -57,6 +60,7 @@ export const Screen2 = () => {
           )}
         </div>
       </div>
+
       <div className="card-container">
         {charArr.map((s: string, index: number) => (
           <Card

@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const Card = ({ charInfo, closeBtnHandler }: any) => {
-  console.log(charInfo, closeBtnHandler);
-
   const { char, index } = charInfo;
-  const getColor = (char: string) =>
+
+  // to get color info from colors array
+  const getColorInfo = (char: string) =>
     colors.filter((obj) => (obj.letter === char ? obj : ""));
-  let color = getColor(char);
+  let color = getColorInfo(char);
 
   return (
     <div

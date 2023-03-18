@@ -7,18 +7,19 @@ import "./screen1.css";
 
 export const Screen1 = () => {
   const navigate = useNavigate();
+
   const [input, setInput] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
   const formSubmitHandler = (e: any) => {
     e.preventDefault();
-    const trimmedString = input.replace(/\s/g, "");
+    const trimmedString = input.replace(/\s/g, ""); // removes extra spaces from the input string
     trimmedString === ""
       ? setShowAlert(true)
       : navigate("/screen2", { state: trimmedString });
     setInput("");
   };
-  // "fa-solid fa-broom-ball"
+
   return (
     <div className="landing-container">
       <div className="landing-content">
