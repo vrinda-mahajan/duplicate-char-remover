@@ -1,4 +1,22 @@
-.alert{
-    width: fit-content;
-    padding: 1rem;
+.landing-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.landing-content {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-bottom: 2.8rem;
+}
+.landing-logo {
+  font-size: 4rem;
+  color: var(--color-primay);
+}
+.btn-submit {
+  background-color: var(--color-primay);
+  color: white;
 }
