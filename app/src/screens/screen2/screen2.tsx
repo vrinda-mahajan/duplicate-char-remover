@@ -1,5 +1,5 @@
 import { Card } from "component";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./screen2.css";
 

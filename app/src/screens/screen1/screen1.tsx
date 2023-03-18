@@ -1,27 +1,38 @@
-import "./screen1.css";
+import { InputBar } from "component";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-// form
+import { useNavigate } from "react-router-dom";
+import "./screen1.css";
+
 export const Screen1 = () => {
+
+  const navigate = useNavigate();
   const [input, setInput] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+
+  const formSubmitHandler = (e: any) => {
+    e.preventDefault();
+    const trimmedString = input.replace(/\s/g, "");
+    trimmedString === ""
+      ? setShowAlert(true)
+      : navigate("/screen2", { state: trimmedString });
+    setInput("");
+  };
+  
   return (
     <>
-      <div className="input-container">
-        <label className="input-label">Enter Input</label>
-        <input
-          className="input-field"
-          value={input}
-          placeholder="Enter text"
-          onChange={(e) => {
-            console.log(input);
-            setInput(e.target.value);
-          }}
-          type="text"
-        />
-      </div>
-      <Link to="/screen2" state={input}>
-        <button className="btn btn-primary">Submit</button>
-      </Link>
+      <form onSubmit={formSubmitHandler}>
+        <InputBar input={input} setInput={setInput} />
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+        {showAlert ? (
+          <div className="alert alert-error">
+            Enter a valid input.
+          </div>
+        ) : (
+          ""
+        )}
+      </form>
     </>
   );
 };
