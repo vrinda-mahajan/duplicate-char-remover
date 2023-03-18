@@ -1,18 +1,19 @@
 .char-card {
   position: relative;
-  width: 8rem;
-  height: 8rem;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 1rem;
+  border-radius: 1.2rem;
 }
 .char-card-close-btn {
   position: absolute;
   top: 0.4rem;
   right: 0.8rem;
   cursor: pointer;
+  color: black;
+  font-size: 1.6rem;
 }
 .char-card-content {
   font-size: 4rem;

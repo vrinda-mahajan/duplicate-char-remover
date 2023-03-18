@@ -1,12 +1,13 @@
 import { Card } from "component";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import "./screen2.css";
 
 export const Screen2 = () => {
   const { state } = useLocation();
   const [input, setInput] = useState(state);
-  console.log(state.split(""));
 
   const charArr = input.split("");
   let updatedString = "";
@@ -33,18 +34,29 @@ export const Screen2 = () => {
   const isUnique = checkUniqueChars(charArr);
 
   return (
-    <>
-      <h1>Hello screen 2</h1>
-      {isUnique ? (
-        <span className="chip">
-          Success
-        </span>
-      ) : (
-        ""
-      )}
-      <p>Original String: {state}</p>
-      <p>Current String: {input}</p>
-
+    <div className="screen2-container">
+      <Link to={"/"} className="back-icon">
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </Link>
+      <div className="screen2-header">
+        <div>
+          <p className="text-xlg">
+            <b>Original String:</b> {state}
+          </p>
+          <p className="text-xlg">
+            <b>Current String:</b> {input}
+          </p>
+        </div>
+        <div>
+          {isUnique ? (
+            <span className="chip">
+              <b>Success</b>
+            </span>
+          ) : (
+            ""
+          )}
+        </div>
+      </div>
       <div className="card-container">
         {charArr.map((s: string, index: number) => (
           <Card
@@ -54,6 +66,6 @@ export const Screen2 = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
